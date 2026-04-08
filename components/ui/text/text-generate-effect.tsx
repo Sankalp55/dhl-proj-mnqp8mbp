@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
 export type TextGenerateEffectProps = {
   words: string;
@@ -8,7 +8,7 @@ export type TextGenerateEffectProps = {
 };
 
 /**
- * Minimal, build-safe TextGenerateEffect implementation.
+ * Minimal placeholder that renders the provided text.
  */
 export function TextGenerateEffect({ words, className }: TextGenerateEffectProps) {
   return <span className={className}>{words}</span>;

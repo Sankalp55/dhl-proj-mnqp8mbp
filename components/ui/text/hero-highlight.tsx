@@ -1,13 +1,20 @@
-"use client";
+'use client';
 
-export default function HeroHighlight(props: any) {
+import * as React from 'react';
+
+export type HighlightProps = React.HTMLAttributes<HTMLSpanElement> & {
+  children?: React.ReactNode;
+};
+
+/**
+ * Minimal placeholder highlight component.
+ */
+export function Highlight({ className, children, ...props }: HighlightProps) {
   return (
-    <section className="w-full py-16 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        {props.headline && <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{props.headline}</h2>}
-        {props.subheadline && <p className="text-lg text-muted-foreground mb-8 max-w-2xl">{props.subheadline}</p>}
-        {props.children}
-      </div>
-    </section>
+    <span className={className} {...props}>
+      {children}
+    </span>
   );
 }
+
+export default Highlight;

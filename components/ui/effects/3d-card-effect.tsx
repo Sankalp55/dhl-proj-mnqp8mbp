@@ -1,23 +1,19 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
 type DivProps = React.HTMLAttributes<HTMLDivElement>;
 
-export function CardContainer({ className, children, ...props }: DivProps) {
-  return (
-    <div className={className} {...props}>
-      {children}
-    </div>
-  );
+/**
+ * Minimal, type-safe placeholders for the 3D card effect components.
+ * These satisfy named imports used across the app.
+ */
+export function CardContainer({ className, ...props }: DivProps) {
+  return <div className={className} {...props} />;
 }
 
-export function CardBody({ className, children, ...props }: DivProps) {
-  return (
-    <div className={className} {...props}>
-      {children}
-    </div>
-  );
+export function CardBody({ className, ...props }: DivProps) {
+  return <div className={className} {...props} />;
 }
 
 export type CardItemProps = DivProps & {
@@ -25,17 +21,7 @@ export type CardItemProps = DivProps & {
   as?: keyof JSX.IntrinsicElements;
 };
 
-export function CardItem({
-  className,
-  children,
-  translateZ,
-  as,
-  ...props
-}: CardItemProps) {
-  const Comp: any = as ?? "div";
-  return (
-    <Comp className={className} {...props}>
-      {children}
-    </Comp>
-  );
+export function CardItem({ as, className, ...props }: CardItemProps) {
+  const Comp: any = as ?? 'div';
+  return <Comp className={className} {...props} />;
 }

@@ -1,226 +1,217 @@
+import { HeroSpotlight } from '@/components/blocks/HeroSpotlight'
+import { FeaturesCards3D } from '@/components/blocks/FeaturesCards3D'
 import { FeaturesGrid } from '@/components/blocks/FeaturesGrid'
+import { TestimonialsAnimated } from '@/components/blocks/TestimonialsAnimated'
 import { FAQAccordion } from '@/components/blocks/FAQAccordion'
-import { CTAVortex } from '@/components/blocks/CTAVortex'
+import { CTASparkles } from '@/components/blocks/CTASparkles'
 
 export default function ServicesPage() {
   return (
-    <>
-      <section className="py-24 md:py-28 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col gap-6">
-            <div className="inline-flex w-fit items-center rounded-full border bg-card px-3 py-1 text-sm text-muted-foreground">
-              Services
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Logistics services built for speed, control, and confidence
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              From urgent express shipments to full supply-chain operations—choose the services that match your business
-              goals. DHL teams help you standardize processes, reduce exceptions, and keep every stakeholder informed with
-              clear milestones and proactive alerts.
-            </p>
+    <div>
+      <HeroSpotlight
+        headline="Logistics services built for speed and control"
+        subheadline="From express parcels to freight and supply chain solutions—choose the right service level for every lane. We combine disciplined operations with clear tracking so your team can plan, communicate, and deliver reliably."
+        primaryCta={{ label: 'Talk to an Expert', href: '/contact' }}
+        secondaryCta={{ label: 'See Pricing', href: '/pricing' }}
+      />
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+      <section id="features" className="py-20 md:py-28 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+              How shipments move end-to-end
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Predictability comes from process. Our operating model is designed to reduce surprises
+              and improve delivery performance with consistent scan events, clear handoffs, and
+              proactive exception handling.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: '1) Pickup',
+                description:
+                  'Scheduled pickups with scan events and chain-of-custody. Your team gets confirmation that freight is in motion—no guessing.',
+              },
+              {
+                title: '2) Sort & linehaul',
+                description:
+                  'Optimized routing through hubs for faster transit. We prioritize reliable lanes and track milestones so ETAs stay realistic.',
+              },
+              {
+                title: '3) Customs clearance',
+                description:
+                  'Documentation checks and proactive exception handling to reduce holds. When something needs attention, you’ll know early.',
+              },
+              {
+                title: '4) Last-mile delivery',
+                description:
+                  'Recipient notifications, delivery windows where available, and proof of delivery for customer service and audit needs.',
+              },
+            ].map((step) => (
+              <div
+                key={step.title}
+                className="rounded-xl border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                Talk to an Expert
-              </a>
-              <a
-                href="/pricing"
-                className="inline-flex items-center justify-center rounded-lg border bg-card px-5 py-3 text-sm font-medium hover:bg-muted transition-colors"
-              >
-                View Pricing
-              </a>
-            </div>
+                <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="service-cards" className="py-24 md:py-28 px-4 md:px-8 bg-muted">
+      <section id="service-cards" className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <FeaturesGrid
-            badge="Core offerings"
-            headline="Core offerings"
-            subheadline="Clear options with transparent capabilities and SLAs—so you can choose what you need today and expand as volume grows."
+          <FeaturesCards3D
+            badge="Service levels"
+            headline="Choose the right service for the job"
+            subheadline="Flexible options for parcels, freight, and supply chain operations—each designed to balance speed, cost, and control for your lanes."
             features={[
               {
-                title: 'Express Shipping',
+                title: 'Express Parcel',
                 description:
-                  'Time-definite delivery with priority handling and customs support. Ideal for urgent replenishment, spare parts, and high-value goods.',
-                icon: 'Zap',
+                  'Time-definite delivery with real-time tracking, recipient notifications, and signature options for high-value or time-sensitive shipments.',
               },
               {
-                title: 'Freight Forwarding',
+                title: 'Freight (Air & Ocean)',
                 description:
-                  'Air, ocean, and road freight with optimized routing and consolidation. Balance cost and speed with milestone visibility across carriers.',
-                icon: 'Route',
+                  'Cost-effective freight with lane planning and milestone visibility. Ideal for predictable replenishment and international networks.',
               },
               {
-                title: 'Warehousing',
+                title: 'Warehousing & Fulfillment',
                 description:
-                  'Storage, kitting, pick/pack, and inventory controls designed for accuracy. Support seasonal peaks with consistent SLAs.',
-                icon: 'Package',
-              },
-              {
-                title: 'Last‑Mile & Returns',
-                description:
-                  'Delivery windows, proof of delivery, and streamlined reverse logistics. Reduce failed deliveries and improve customer satisfaction.',
-                icon: 'Repeat',
+                  'Storage, pick/pack, and returns with inventory visibility. Build SLA-based operations that keep order accuracy high and cycle times low.',
               },
             ]}
           />
-        </div>
-      </section>
 
-      <section id="how-it-works" className="py-24 md:py-28 px-4 md:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <div className="inline-flex w-fit items-center rounded-full border bg-card px-3 py-1 text-sm text-muted-foreground">
-                Process
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Express Parcel highlights',
+                items: ['Domestic & international options', 'Delivery windows', 'Proof of delivery'],
+              },
+              {
+                title: 'Freight highlights',
+                items: ['Consolidation', 'Port-to-door support', 'Customs guidance'],
+              },
+              {
+                title: 'Warehousing highlights',
+                items: ['SLA-based operations', 'Returns processing', 'Inventory reporting'],
+              },
+            ].map((card) => (
+              <div key={card.title} className="rounded-xl border bg-muted p-6 shadow-sm">
+                <h3 className="font-semibold tracking-tight">{card.title}</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  {card.items.map((it) => (
+                    <li key={it} className="flex gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary" />
+                      <span>{it}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">How it works</h2>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                A predictable flow from quote to delivery—designed to reduce exceptions. We start with lane planning and
-                service-level fit, then build reliable pickup, labeling, and tracking workflows that scale.
-              </p>
-
-              <div className="mt-8 space-y-4">
-                {[
-                  {
-                    title: '1) Quote & lane planning',
-                    description:
-                      'We confirm service level, lanes, weights, and delivery windows. You’ll get clarity on trade-offs between speed, cost, and resilience.',
-                  },
-                  {
-                    title: '2) Pickup & label generation',
-                    description:
-                      'Schedule pickup, generate labels, and validate customs documentation. Standardization here prevents delays later.',
-                  },
-                  {
-                    title: '3) In-transit visibility',
-                    description:
-                      'Track milestones, receive alerts, and resolve exceptions quickly. Share tracking links with customers or internal teams.',
-                  },
-                  {
-                    title: '4) Delivery & proof',
-                    description:
-                      'Proof of delivery, returns handling, and performance reporting. Review lane performance and continuously improve.',
-                  },
-                ].map((step) => (
-                  <div key={step.title} className="rounded-xl border bg-card shadow-sm p-5">
-                    <p className="font-semibold">{step.title}</p>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-xl border bg-card shadow-sm p-6">
-              <h3 className="text-xl font-bold tracking-tight">Tracking (Demo)</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Your operations team should never have to guess. A modern tracking experience includes clear milestones,
-                proactive exception flags, and a consistent proof-of-delivery record.
-              </p>
-
-              <div className="mt-6 space-y-3">
-                {[
-                  { label: 'Shipment created', value: 'Label generated + pickup scheduled' },
-                  { label: 'Picked up', value: 'Driver scan confirmed' },
-                  { label: 'In transit', value: 'Milestones updated per hub' },
-                  { label: 'Out for delivery', value: 'Delivery window confirmed' },
-                  { label: 'Delivered', value: 'Proof of delivery captured' },
-                ].map((row) => (
-                  <div key={row.label} className="flex items-start justify-between gap-4 rounded-lg border bg-muted p-4">
-                    <div className="text-sm font-medium">{row.label}</div>
-                    <div className="text-sm text-muted-foreground text-right">{row.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90 transition-opacity w-full"
-                >
-                  Request a tracking walkthrough
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="integrations" className="py-24 md:py-28 px-4 md:px-8 bg-muted">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <FeaturesGrid
-            badge="Automation"
-            headline="Automate shipping with integrations"
-            subheadline="Reduce manual work and errors by connecting your tools. Start with order sync and labels, then add tracking webhooks and analytics exports as you scale."
+            badge="Visibility & control"
+            headline="Operational visibility across teams"
+            subheadline="Bring tracking and performance data into your dashboards and workflows. Start simple, then add automation as your volume grows."
             features={[
               {
-                title: 'Order sync',
+                title: 'Tracking API',
                 description:
-                  'Pull orders automatically and create shipments in bulk. Reduce copy/paste errors and speed up fulfillment during peak.',
-                icon: 'RefreshCw',
+                  'Embed tracking and events in your portal so customers and internal teams see the same source of truth.',
               },
               {
-                title: 'Tracking events',
+                title: 'Webhooks',
                 description:
-                  'Push tracking updates to customers and internal systems. Keep support volume low with proactive notifications.',
-                icon: 'Bell',
-              },
-              {
-                title: 'Address validation',
-                description:
-                  'Prevent failed deliveries with validation and correction prompts at checkout or during order review.',
-                icon: 'MapPin',
+                  'Trigger actions on pickup, delay, and delivery—route exceptions to the right team automatically.',
               },
               {
                 title: 'Analytics exports',
                 description:
-                  'Export lane performance and costs for finance and ops. Monitor exceptions, on-time performance, and spend by lane.',
-                icon: 'BarChart3',
+                  'CSV/JSON exports for BI and finance to measure performance, cost, and SLA adherence over time.',
+              },
+              {
+                title: 'Role-based access',
+                description:
+                  'Control who sees what across locations and teams, with permissions designed for multi-site operations.',
               },
             ]}
           />
         </div>
       </section>
 
-      <section className="py-24 md:py-28 px-4 md:px-8">
+      <section className="py-20 md:py-28 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <TestimonialsAnimated
+            headline="Built for teams that ship at scale"
+            subheadline="Operational leaders rely on DHL for predictable delivery and clear communication—especially when the network gets complex."
+            testimonials={[
+              {
+                quote:
+                  'We reduced late deliveries by 18% after switching lanes and setting exception alerts. The visibility is a game changer.',
+                name: 'Operations Manager',
+                role: 'Operations',
+                company: 'Northwind Retail',
+              },
+              {
+                quote:
+                  'Customs support and documentation checks helped us avoid costly holds during peak season.',
+                name: 'Logistics Lead',
+                role: 'Logistics',
+                company: 'Helio Pharma',
+              },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <FAQAccordion
-            headline="Services FAQs"
-            subheadline="A few practical details teams ask about when selecting services and setting up lanes."
+            headline="Services FAQ"
+            subheadline="Common questions about service levels, handoffs, and getting started."
             items={[
               {
-                question: 'Can I combine services (e.g., warehousing + last-mile)?',
+                question: 'Which service should I choose for time-sensitive shipments?',
                 answer:
-                  'Yes. Many teams use warehousing for inventory positioning and pick/pack, then last‑mile delivery for consistent customer experience. We’ll help define SLAs and handoffs so the workflow stays predictable.',
+                  'Express Parcel is typically the best fit for time-definite delivery and high-visibility needs. For international replenishment where cost is a priority, Freight (Air & Ocean) may be a better match.',
               },
               {
                 question: 'Do you support returns workflows?',
                 answer:
-                  'Yes. Returns can be configured with branded labels, drop-off options, and status milestones so customers and ops teams have the same visibility.',
+                  'Yes. We can support returns labels, scan events, and reporting so your team can manage reverse logistics with the same visibility as outbound shipments.',
               },
               {
-                question: 'How do you handle exceptions?',
+                question: 'Can you handle multi-site operations?',
                 answer:
-                  'Exception events trigger alerts and queues so your team can act quickly. We focus on early detection, clear ownership, and post-incident reporting to reduce repeat issues.',
+                  'Yes. Role-based access and structured reporting make it easier to manage multiple facilities, lanes, and stakeholders without losing accountability.',
               },
             ]}
           />
         </div>
       </section>
 
-      <CTAVortex
-        headline="Need a custom logistics plan?"
-        description="We’ll recommend the right mix of services for your lanes, volumes, and SLAs—then map a rollout plan that fits your team and tools."
-        ctaLabel="Get a Custom Plan"
-        ctaHref="/contact"
-      />
-    </>
+      <section className="py-20 md:py-28 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <CTASparkles
+            headline="Talk to a logistics expert"
+            description="Tell us your lanes, volume, and service requirements. We’ll recommend the best service mix and provide lane-based pricing."
+            ctaLabel="Request a Quote"
+            ctaHref="/contact"
+          />
+        </div>
+      </section>
+    </div>
   )
 }

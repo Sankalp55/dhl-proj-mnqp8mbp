@@ -2,73 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* DHL Logistics palette (HSL derived from blueprint hex colors) */
+/* DHL Logistics palette converted to HSL from blueprint hex values */
+:root {
+  /* Core */
+  --background: 0 0% 100%;        /* #FFFFFF */
+  --foreground: 0 0% 20%;         /* #333333 */
+
+  /* Brand */
+  --primary: 48 100% 50%;         /* #FFCC00 */
+  --primary-foreground: 0 0% 20%; /* #333333 */
+
+  --secondary: 356 96% 43%;       /* #D40511 */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+
+  --accent: 356 96% 43%;          /* #D40511 */
+
+  /* UI */
+  --muted: 0 0% 100%;             /* #FFFFFF */
+  --muted-foreground: 0 0% 20%;   /* #333333 */
+
+  --card: 0 0% 100%;              /* #FFFFFF */
+  --border: 356 96% 43%;          /* #D40511 */
+  --ring: 48 100% 50%;            /* #FFCC00 */
+}
+
+.dark {
+  /* Provided even if dark mode is disabled in the blueprint */
+  --background: 0 0% 8%;
+  --foreground: 0 0% 96%;
+
+  --primary: 48 100% 50%;
+  --primary-foreground: 0 0% 12%;
+
+  --secondary: 356 96% 43%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 356 96% 43%;
+
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 75%;
+
+  --card: 0 0% 10%;
+  --border: 356 96% 43%;
+  --ring: 48 100% 50%;
+}
+
 @layer base {
-  :root {
-    /* Radius */
-    --radius: 0.75rem;
-
-    /* Core */
-    --background: 0 0% 100%;          /* #FFFFFF */
-    --foreground: 0 0% 20%;           /* #333333 */
-
-    /* Brand */
-    --primary: 48 100% 50%;           /* #FFCC00 */
-    --primary-foreground: 0 0% 20%;   /* #333333 */
-
-    --secondary: 356 96% 43%;         /* #D40511 */
-    --secondary-foreground: 0 0% 100%;/* #FFFFFF */
-
-    --accent: 356 96% 43%;            /* #D40511 */
-
-    /* UI */
-    --muted: 48 100% 90%;             /* #FFF7CC */
-    --muted-foreground: 0 0% 20%;     /* #333333 */
-
-    --card: 0 0% 100%;                /* #FFFFFF */
-    --border: 0 0% 90%;               /* #E6E6E6 */
-    --ring: 356 96% 43%;              /* #D40511 */
-  }
-
-  /* Included for completeness; blueprint uses light mode by default */
-  .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 10%;
-    --border: 0 0% 18%;
-    --ring: 356 96% 55%;
-
-    --primary: 48 100% 50%;
-    --primary-foreground: 0 0% 12%;
-
-    --secondary: 356 96% 55%;
-    --secondary-foreground: 0 0% 100%;
-
-    --accent: 356 96% 55%;
-
-    --muted: 48 30% 16%;
-    --muted-foreground: 0 0% 85%;
-  }
-
   * {
     @apply border-border;
   }
 
   html {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light;
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
-      "Liberation Sans", sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: Arial, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, "Apple Color Emoji",
+      "Segoe UI Emoji";
   }
 
+  /* Headings per blueprint: Arial Black */
   h1, h2, h3, h4, h5, h6 {
-    font-family: "Arial Black", Arial, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-      "Noto Sans", "Liberation Sans", sans-serif;
+    font-family: "Arial Black", Arial, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica;
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.35);
   }
 }

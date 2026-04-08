@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
-export type AnimatedTestimonialItem = {
+export type AnimatedTestimonialsItem = {
   quote: string;
   name: string;
-  title?: string;
+  designation?: string;
   src?: string;
 };
 
 export type AnimatedTestimonialsProps = {
-  testimonials: AnimatedTestimonialItem[];
+  testimonials: AnimatedTestimonialsItem[];
   className?: string;
 };
 
 /**
- * Minimal, build-safe AnimatedTestimonials implementation.
+ * Minimal placeholder testimonials renderer.
  */
 export function AnimatedTestimonials({ testimonials, className }: AnimatedTestimonialsProps) {
   return (
@@ -25,7 +25,7 @@ export function AnimatedTestimonials({ testimonials, className }: AnimatedTestim
           <blockquote>{t.quote}</blockquote>
           <figcaption>
             <div>{t.name}</div>
-            {t.title ? <div>{t.title}</div> : null}
+            {t.designation ? <div>{t.designation}</div> : null}
           </figcaption>
         </figure>
       ))}

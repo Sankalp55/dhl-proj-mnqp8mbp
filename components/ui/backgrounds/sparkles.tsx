@@ -1,36 +1,33 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
-export type SparklesCoreProps = {
-  className?: string;
+export type SparklesCoreProps = React.HTMLAttributes<HTMLDivElement> & {
   background?: string;
   minSize?: number;
   maxSize?: number;
   particleDensity?: number;
-  particleColor?: string;
+  className?: string;
 };
 
 /**
- * Minimal, build-safe SparklesCore implementation.
- * This is a lightweight placeholder to satisfy imports.
+ * Minimal placeholder implementation to satisfy imports.
+ * Replace with your actual sparkles/canvas implementation if desired.
  */
 export function SparklesCore({
-  className,
   background,
-  minSize,
-  maxSize,
-  particleDensity,
-  particleColor,
+  className,
+  style,
+  ...props
 }: SparklesCoreProps) {
   return (
     <div
       className={className}
       style={{
-        background: background ?? "transparent",
+        background: background ?? 'transparent',
+        ...style,
       }}
-      aria-hidden="true"
+      {...props}
     />
   );
 }

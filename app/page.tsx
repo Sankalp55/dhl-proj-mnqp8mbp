@@ -1,211 +1,164 @@
 import { HeroAurora } from '@/components/blocks/HeroAurora'
 import { LogoCloud } from '@/components/blocks/LogoCloud'
-import { StatsCounter } from '@/components/blocks/StatsCounter'
 import { FeaturesCards3D } from '@/components/blocks/FeaturesCards3D'
 import { FeaturesGrid } from '@/components/blocks/FeaturesGrid'
 import { PricingTable } from '@/components/blocks/PricingTable'
 import { TestimonialsAnimated } from '@/components/blocks/TestimonialsAnimated'
 import { FAQAccordion } from '@/components/blocks/FAQAccordion'
 import { CTASparkles } from '@/components/blocks/CTASparkles'
+import { StatsCounter } from '@/components/blocks/StatsCounter'
 
 export default function HomePage() {
   return (
-    <>
+    <div>
       <HeroAurora
-        badge="Bold, fast, and reliable logistics"
-        headline="Ship smarter. Deliver faster. Scale globally."
-        subheadline="DHL logistics solutions for express shipping, freight, warehousing, and last‑mile delivery—powered by real-time tracking and proactive exception management. Reduce delays, improve visibility, and keep customers informed from pickup to proof of delivery."
+        badge="Fast, reliable logistics—delivered with precision."
+        headline="Ship smarter. Deliver faster."
+        subheadline="Modern logistics for businesses that can’t afford delays—track, optimize, and scale deliveries with confidence. Get clear ETAs, proactive exception alerts, and the operational control your team needs to hit service targets."
         primaryCta={{ label: 'Get a Quote', href: '/contact' }}
         secondaryCta={{ label: 'Explore Services', href: '/services' }}
       />
 
-      <section className="py-20 md:py-24 px-4 md:px-8">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="rounded-xl border bg-card text-card-foreground shadow-sm p-6">
-              <p className="text-sm text-muted-foreground">On-time delivery</p>
-              <p className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">99.2%</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Performance you can plan around—supported by proactive exception handling and clear SLAs.
+          <div className="rounded-xl border bg-card p-6 md:p-10 shadow-sm">
+            <div className="flex flex-col gap-3">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Performance you can plan around
+              </h2>
+              <p className="text-muted-foreground">
+                Logistics works best when it’s predictable. We focus on measurable outcomes—on-time
+                performance, fast exception resolution, and clean reporting—so operations, customer
+                experience, and finance stay aligned.
               </p>
             </div>
-            <div className="rounded-xl border bg-card text-card-foreground shadow-sm p-6">
-              <p className="text-sm text-muted-foreground">Countries served</p>
-              <p className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">220+</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Global reach for cross-border shipping, freight lanes, and multi-region fulfillment programs.
-              </p>
-            </div>
-            <div className="rounded-xl border bg-card text-card-foreground shadow-sm p-6">
-              <p className="text-sm text-muted-foreground">Avg. pickup time</p>
-              <p className="mt-2 text-3xl md:text-4xl font-bold tracking-tight">{'< 60 min'}</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Fast dispatch for urgent shipments—especially valuable for time-sensitive ecommerce and B2B parts.
-              </p>
-            </div>
-          </div>
 
-          <div className="mt-10">
-            <StatsCounter
-              stats={[
-                { label: 'Shipments tracked per day', value: 125, suffix: 'k+' },
-                { label: 'Avg. exception resolution time', value: 2, suffix: 'h' },
-                { label: 'Customer tracking adoption', value: 84, suffix: '%' },
-                { label: 'Active integration workflows', value: 340, suffix: '+' },
-              ]}
-            />
+            <div className="mt-8">
+              <StatsCounter
+                stats={[
+                  { label: 'Avg. first response time', value: 4, suffix: ' hrs' },
+                  { label: 'Milestone events per shipment', value: 12, suffix: '+' },
+                  { label: 'Countries served', value: 220, suffix: '+' },
+                  { label: 'On-time improvement (typical)', value: 10, suffix: '–20%' },
+                ]}
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8 bg-muted">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <LogoCloud
-            headline="Trusted by teams that move the world"
+            headline="Trusted by teams shipping worldwide"
             logos={[
-              { name: 'ACME Retail', imageUrl: '' },
-              { name: 'Northwind Manufacturing', imageUrl: '' },
-              { name: 'Globex Pharma', imageUrl: '' },
-              { name: 'Initech', imageUrl: '' },
-              { name: 'Umbrella Foods', imageUrl: '' },
-              { name: 'Stark Components', imageUrl: '' },
+              { name: 'AEROPARTS CO.', imageUrl: '' },
+              { name: 'NORTHWIND RETAIL', imageUrl: '' },
+              { name: 'HELIO PHARMA', imageUrl: '' },
+              { name: 'METRO ELECTRONICS', imageUrl: '' },
+              { name: 'SUMMIT MANUFACTURING', imageUrl: '' },
+              { name: 'BRIGHTFOODS', imageUrl: '' },
             ]}
           />
           <p className="mt-6 text-sm text-muted-foreground">
-            Logos shown as text marks (no external assets). References are illustrative to demonstrate a realistic
-            social-proof layout.
+            Logistics leaders choose DHL for speed, visibility, and reliability—especially when
+            volume spikes and customer expectations rise.
           </p>
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <FeaturesCards3D
-            badge="End-to-end coverage"
-            headline="End-to-end logistics, engineered for reliability"
-            subheadline="A clean, technical experience with subtle motion and glass-like cards—built to reduce delays, improve visibility, and keep delivery promises across every lane."
+            badge="Core capabilities"
+            headline="Everything you need to move goods with certainty"
+            subheadline="A clean, technical experience with real-time visibility and proactive exception handling—built for operators who need clear ownership and fast decisions."
             features={[
               {
-                title: 'Express & International Shipping',
+                title: 'Real-time tracking',
                 description:
-                  'Door-to-door delivery with customs-ready documentation support, time-definite options, and proactive ETA updates to keep stakeholders aligned.',
-                icon: 'Plane',
+                  'Live shipment status with milestone events, scan history, and predictive ETAs you can share with customers and internal teams.',
               },
               {
-                title: 'Freight (Air, Ocean, Road)',
+                title: 'Customs & compliance',
                 description:
-                  'Flexible routing, consolidated loads, and milestone tracking across carriers—so you can balance cost, speed, and risk per lane.',
-                icon: 'Ship',
+                  'Documentation guidance and compliance checks to reduce border delays and avoid preventable holds on time-sensitive lanes.',
               },
               {
-                title: 'Warehousing & Fulfillment',
+                title: 'Route optimization',
                 description:
-                  'Inventory accuracy, pick/pack SLAs, and returns workflows that scale with demand—ideal for multi-SKU ecommerce and B2B replenishment.',
-                icon: 'Warehouse',
+                  'Smarter routing recommendations to reduce transit time and cost across common lanes—without sacrificing reliability.',
               },
               {
-                title: 'Last‑Mile Delivery',
+                title: 'Exception alerts',
                 description:
-                  'Delivery windows, proof of delivery, and customer notifications built-in—reduce “Where is my order?” tickets and failed deliveries.',
-                icon: 'Truck',
+                  'Instant notifications when shipments deviate from plan, with clear next steps so your team can resolve issues quickly.',
               },
               {
-                title: 'Real‑Time Tracking',
+                title: 'Carbon reporting',
                 description:
-                  'Live shipment status, exception alerts, and shareable tracking links—visibility for ops teams and a simple experience for customers.',
-                icon: 'Radar',
-              },
-              {
-                title: 'Carbon Reporting',
-                description:
-                  'Estimate emissions by lane and optimize routes for lower impact—support internal reporting and sustainability targets with practical data.',
-                icon: 'Leaf',
+                  'Emissions estimates and reporting to support sustainability goals and give stakeholders consistent metrics.',
               },
             ]}
           />
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8 bg-muted">
+      <section id="integrations" className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <FeaturesGrid
             badge="Integrations"
-            headline="Integrations that fit your stack"
-            subheadline="Connect shipping, orders, and inventory without heavy implementation. Start with the essentials, then automate deeper as volume grows."
+            headline="Integrations that fit your workflow"
+            subheadline="Connect shipping data to the tools your team already uses—no heavy setup. Start with a lightweight integration and expand to webhooks and exports as you scale."
             features={[
               {
-                title: 'Ecommerce platforms',
+                title: 'Commerce platforms',
                 description:
-                  'Sync orders, labels, and tracking events with Shopify, WooCommerce, and custom storefronts. Auto-create shipments, generate return labels, and keep customers updated.',
-                icon: 'ShoppingCart',
+                  'Sync orders and labels with Shopify, WooCommerce, and custom storefronts. Auto-create shipments, print labels in bulk, and streamline returns workflows.',
               },
               {
-                title: 'ERP & OMS',
+                title: 'ERP & inventory',
                 description:
-                  'Keep fulfillment and finance aligned with SAP, Oracle, and Netsuite workflows. Use status webhooks, invoice-ready exports, and exception queues for control.',
-                icon: 'Boxes',
+                  'Connect to SAP, NetSuite, and warehouse systems for end-to-end visibility. Keep fulfillment inventory-aware with ASN support and scan events.',
               },
               {
-                title: 'Developer-friendly API',
+                title: 'Team notifications',
                 description:
-                  'REST endpoints for rates, labels, pickups, and tracking—built for automation. Use API keys, sandbox mode, and webhook events to integrate safely.',
-                icon: 'Code',
+                  'Keep stakeholders updated via Slack, email, and webhooks. Route exceptions to the right channel and confirm deliveries automatically.',
               },
             ]}
           />
-
-          <div className="mt-10 rounded-xl border bg-card text-card-foreground shadow-sm p-6">
-            <div className="flex items-center justify-between gap-4 flex-wrap">
-              <div>
-                <p className="text-sm font-medium">Example API request</p>
-                <p className="text-sm text-muted-foreground">
-                  Create a shipment with a single call—ideal for automated fulfillment pipelines.
-                </p>
-              </div>
-              <a
-                href="/contact"
-                className="text-sm font-medium underline underline-offset-4 hover:text-foreground transition-colors"
-              >
-                Request API access
-              </a>
-            </div>
-            <pre className="mt-4 overflow-x-auto rounded-lg border bg-muted p-4 text-sm leading-relaxed">
-              <code className="font-mono text-foreground">{`curl -X POST https://api.example.com/v1/shipments \\
-  -H "Authorization: Bearer <token>" \\
-  -H "Content-Type: application/json" \\
-  -d '{"service":"EXPRESS","from":"DE","to":"US","weight":2.4}'`}</code>
-            </pre>
-          </div>
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <PricingTable
-            headline="Choose your plan"
-            subheadline="Designed for SMBs to enterprise operations. Plans cover platform features; final shipping rates depend on lanes, weight, dimensions, and service level."
+            headline="Plans for every shipping operation"
+            subheadline="Plans cover the platform features and support. Final shipping rates depend on lanes, weight, dimensions, and service level—request a quote for exact pricing."
             tiers={[
               {
                 name: 'Starter',
                 price: '$49',
                 period: 'month',
                 features: [
-                  'Basic rate estimates',
-                  'Label generation',
-                  'Email support',
-                  'Standard tracking page',
+                  'Tracking dashboard',
+                  'Email notifications',
+                  'Basic reporting',
+                  'Standard support',
                 ],
                 ctaLabel: 'Choose Starter',
                 ctaHref: '/contact',
               },
               {
                 name: 'Growth',
-                price: '$199',
+                price: '$149',
                 period: 'month',
                 features: [
-                  'Discounted rates (volume-based)',
-                  'Automations & webhooks',
-                  'Returns workflows',
+                  'Everything in Starter',
+                  'Webhooks',
+                  'Bulk label workflows',
+                  'Exception alerts',
                   'Priority support',
                 ],
                 ctaLabel: 'Choose Growth',
@@ -215,94 +168,99 @@ export default function HomePage() {
               {
                 name: 'Enterprise',
                 price: 'Custom',
-                period: '',
+                period: 'tailored',
                 features: [
-                  'Dedicated account team',
+                  'Custom SLAs',
+                  'Dedicated success manager',
+                  'Advanced compliance guidance',
                   'Custom integrations',
-                  'Advanced reporting',
-                  'SLA & compliance options',
+                  'Multi-site controls',
                 ],
                 ctaLabel: 'Contact Sales',
                 ctaHref: '/contact',
               },
             ]}
           />
-          <p className="mt-6 text-sm text-muted-foreground">
-            Need annual planning? We’ll structure pricing to match your lanes and volume forecasts, with options for
-            quarterly reviews and SLA reporting.
-          </p>
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8 bg-muted">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <TestimonialsAnimated
-            headline="Teams shipping at scale trust DHL"
-            subheadline="Operational wins you can measure—visibility, fewer exceptions, and faster delivery."
+            headline="Customers see measurable improvements"
+            subheadline="Better ETAs, fewer exceptions, and faster resolution times—so teams spend less time chasing updates and more time improving performance."
             testimonials={[
               {
                 quote:
-                  'We reduced delivery exceptions by 28% in the first quarter thanks to proactive alerts and better lane planning.',
-                name: 'Operations Lead',
-                role: 'Manufacturing Operations',
-                company: 'Northwind Manufacturing',
+                  'The Growth plan paid for itself in the first month—fewer support tickets and clearer ETAs for customers.',
+                name: 'Customer Experience Lead',
+                role: 'CX Operations',
+                company: 'Metro Electronics',
               },
               {
                 quote:
-                  'The tracking experience is clean and fast—customers stopped emailing us for updates.',
-                name: 'Head of CX',
-                role: 'Customer Experience',
-                company: 'ACME Retail',
+                  'We finally have one view of shipments across lanes. Exception alerts keep our team ahead of issues instead of reacting after the fact.',
+                name: 'Supply Chain Director',
+                role: 'Supply Chain',
+                company: 'Summit Manufacturing',
               },
               {
                 quote:
-                  'Integrations were straightforward. Webhooks let us automate status updates across our OMS.',
-                name: 'Engineering Manager',
-                role: 'Platform Engineering',
-                company: 'Initech',
+                  'Annual planning made budgeting easier, and the reporting is clean enough for finance and ops to share without rework.',
+                name: 'Finance Ops Manager',
+                role: 'Finance Operations',
+                company: 'BrightFoods',
               },
             ]}
           />
         </div>
       </section>
 
-      <section className="py-20 md:py-24 px-4 md:px-8">
+      <section className="py-20 md:py-28 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           <FAQAccordion
-            headline="FAQs"
-            subheadline="Quick answers about services, pricing, and how we keep shipments visible from pickup to delivery."
+            headline="Frequently asked questions"
+            subheadline="Quick answers on quoting, service levels, and what you’ll need to get started."
             items={[
               {
-                question: 'Are shipping rates fixed?',
+                question: 'How fast can I get a quote?',
                 answer:
-                  'Plans cover platform features like tracking, automations, and reporting. Shipping rates depend on lanes, weight, dimensions, and the service level you choose. We’ll confirm rates during lane planning and can recommend options based on speed and cost targets.',
+                  'Most requests receive a response within 1 business day. If your lanes require custom routing or compliance review, we’ll schedule a short discovery call to confirm requirements and timelines.',
               },
               {
-                question: 'Do you support international shipping and customs?',
+                question: 'Do plans include shipping rates?',
                 answer:
-                  'Yes. We support cross-border workflows with documentation guidance and milestone tracking. For regulated goods or complex destinations, we’ll align on requirements during onboarding to reduce customs holds and delays.',
+                  'Plans cover platform features and support. Shipping rates depend on lane, weight, dimensions, and service level. We’ll provide lane-based pricing during quoting so you can forecast accurately.',
               },
               {
-                question: 'Can I integrate with my store or OMS?',
+                question: 'Can you support international shipping and customs?',
                 answer:
-                  'Yes. Many teams start with order sync and label creation, then add webhooks for real-time status updates and exception queues. Growth and Enterprise plans are best for deeper automation.',
+                  'Yes. We help you prepare documentation, reduce avoidable delays, and handle exceptions proactively—especially for time-sensitive or regulated shipments.',
               },
               {
-                question: 'What happens when something goes wrong in transit?',
+                question: 'What does “exception alerts” mean in practice?',
                 answer:
-                  'Exception events trigger alerts so ops teams can act quickly—reroute, reschedule delivery, or notify customers. The goal is fewer surprises and faster resolution, with reporting to improve lane performance over time.',
+                  'When a shipment deviates from plan—missed scan, delay at hub, customs hold, or delivery attempt failure—you’ll get an alert with context and recommended next steps so the right team can act quickly.',
               },
             ]}
           />
         </div>
       </section>
 
-      <CTASparkles
-        headline="Ready to move faster with DHL?"
-        description="Get a tailored quote in minutes. Your message is sent client-side via your email provider integration—no database required."
-        ctaLabel="Request a Quote"
-        ctaHref="/contact"
-      />
-    </>
+      <section className="py-20 md:py-28 px-4 md:px-8">
+        <div className="max-w-5xl mx-auto">
+          <CTASparkles
+            headline="Ready to upgrade your logistics?"
+            description="Get a tailored quote in minutes and start shipping with full visibility—clear milestones, proactive alerts, and reporting your team can trust."
+            ctaLabel="Request a Quote"
+            ctaHref="/contact"
+          />
+          <div className="mt-6 text-sm text-muted-foreground">
+            Prefer to evaluate first? Review plans on the pricing page, then request a quote for your
+            lanes and volume.
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

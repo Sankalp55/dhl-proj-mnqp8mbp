@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
 export type AuroraBackgroundProps = React.HTMLAttributes<HTMLDivElement> & {
   children?: React.ReactNode;
 };
 
 /**
- * Minimal, build-safe AuroraBackground implementation.
+ * Minimal placeholder Aurora background wrapper.
  */
 export function AuroraBackground({ className, children, ...props }: AuroraBackgroundProps) {
   return (
